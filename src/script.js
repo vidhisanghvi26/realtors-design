@@ -40,3 +40,25 @@ function filterListings() {
     }
   }
 }
+
+
+function openModal() {
+  document.getElementById('contactModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('contactModal').style.display = 'none';
+}
+
+function sendEmail(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const query = document.getElementById('query').value;
+
+  const mailtoLink = `mailto:vidhisanghvi26@gmail.com?subject=Client%20%Contact%20Us%20Form&body=Name:%20${name}%0AEmail:%20${email}%0APhone:%20${phone}%0AQuery:%20${query}`;
+  window.location.href = mailtoLink;
+  closeModal();
+
+}
