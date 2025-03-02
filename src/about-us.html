@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RS Realtors</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="modal.css" />
   </head>
   <body>
     <nav>
@@ -17,9 +18,27 @@
         <li><a href="listings.html" id="nav-listings">Listings</a></li>
       </ul>
       <div class="cta">
-        <button onclick="handleButtonClick()">Contact Us</button>
+        <button onclick="openModal()">Contact Us</button>
       </div>
     </nav>
+
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="contactForm" onsubmit="sendEmail(event)">
+          <h2>Contact Us</h2>
+          <label for="name" class="required">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email" class="required">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="phone" class="required">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required />
+          <label for="query">Your Query:</label>
+          <textarea id="query" name="query" rows="4"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
     <h1>Rajul Shah realtors About us!</h1>
     <script src="script.js"></script>
   </body>
