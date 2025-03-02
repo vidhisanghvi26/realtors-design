@@ -1,3 +1,4 @@
+<!-- // Listings Page -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RS Realtors</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="listings.css" />
+
     <script src="script.js"></script>
   </head>
   <body>
@@ -22,10 +25,31 @@
       </div>
     </nav>
 
+    <section class="listings-section">
+      <div class="listings-text primary-text">
+        <h1>Listings</h1>
+        <p>
+          Imagine waking up every day in a home that perfectly matches your
+          dreams and aspirations.
+        </p>
+      </div>
+    </section>
+
     <section id="listings" class="listings-container">
       <h2 class="listings-header">Our Top Listings</h2>
 
-      <div class="cards-section">
+      <!-- Search input field -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Search listings by address..."
+          onkeyup="filterListings()"
+        />
+      </div>
+
+      <div class="cards-section" id="cards-section">
         <div class="card">
           <div class="card-image-container">
             <img src="/assets/listing-1.png" alt="Image 1" class="card-image" />
@@ -65,7 +89,7 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">123 Main St, San Francisco</span>
             </div>
           </div>
         </div>
@@ -105,7 +129,7 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">456 Elm St, Oakland</span>
             </div>
           </div>
         </div>
@@ -145,7 +169,7 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">789 Pine St, San Jose</span>
             </div>
           </div>
         </div>
@@ -185,13 +209,17 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">101 Maple St, Palo Alto</span>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-image-container">
-            <img src="/assets/listing-1.png" alt="Image 1" class="card-image" />
+            <img
+              src="/assets/listings-5.png"
+              alt="Image 1"
+              class="card-image"
+            />
             <div class="new-tag">New</div>
           </div>
           <div class="card-content">
@@ -228,12 +256,12 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">202 Cedar St, Berkeley</span>
             </div>
           </div>
         </div>
         <div class="card">
-          <img src="/assets/listing-2.png" alt="Image 1" class="card-image" />
+          <img src="/assets/listings-6.png" alt="Image 1" class="card-image" />
           <div class="card-content">
             <h3 class="card-header">$1,299,000</h3>
             <div class="home-attributes">
@@ -268,12 +296,12 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">303 Oak St, Fremont</span>
             </div>
           </div>
         </div>
         <div class="card">
-          <img src="/assets/listing-3.png" alt="Image 1" class="card-image" />
+          <img src="/assets/listings-7.png" alt="Image 1" class="card-image" />
           <div class="card-content">
             <h3 class="card-header">$1,459,000</h3>
             <div class="home-attributes">
@@ -308,12 +336,12 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">404 Birch St, Sunnyvale</span>
             </div>
           </div>
         </div>
         <div class="card">
-          <img src="/assets/listing-4.png" alt="Image 1" class="card-image" />
+          <img src="/assets/listings-8.png" alt="Image 1" class="card-image" />
           <div class="card-content">
             <h3 class="card-header">$1,329,000</h3>
             <div class="home-attributes">
@@ -348,12 +376,11 @@
                 alt="Address Icon"
                 class="address-icon"
               />
-              <span class="address-value">123 Main St, Springfield</span>
+              <span class="address-value">505 Redwood St, Mountain View</span>
             </div>
           </div>
         </div>
       </div>
-
 
       <section class="image-gallery">
         <h2>PROPERTIES SOLD</h2>
@@ -418,22 +445,22 @@
           realtor at Coldwell Banker-Fremont.
         </p>
         <!-- <div class="footer-social-media">
-          <img
-            src="path/to/facebook-icon.png"
-            alt="Facebook"
-            class="social-icon"
-          />
-          <img
-            src="path/to/twitter-icon.png"
-            alt="Twitter"
-            class="social-icon"
-          />
-          <img
-            src="path/to/instagram-icon.png"
-            alt="Instagram"
-            class="social-icon"
-          />
-        </div> -->
+ <img
+ src="path/to/facebook-icon.png"
+ alt="Facebook"
+ class="social-icon"
+ />
+ <img
+ src="path/to/twitter-icon.png"
+ alt="Twitter"
+ class="social-icon"
+ />
+ <img
+ src="path/to/instagram-icon.png"
+ alt="Instagram"
+ class="social-icon"
+ />
+ </div> -->
       </div>
       <div class="footer-column">
         <h3 class="footer-header">Quick Links</h3>
@@ -456,31 +483,32 @@
           <button>Subscribe</button>
         </div>
       </div>
+
       <div class="footer-column">
         <h3 class="footer-header">Contact Us</h3>
         <div class="contact-details">
           <div class="contact-item">
             <!-- <img
-              src="path/to/address-icon.png"
-              alt="Address"
-              class="contact-icon"
-            /> -->
+ src="path/to/address-icon.png"
+ alt="Address"
+ class="contact-icon"
+ /> -->
             <span>123 Main St, Springfield, CA</span>
           </div>
           <div class="contact-item">
             <!-- <img
-              src="path/to/phone-icon.png"
-              alt="Phone"
-              class="contact-icon"
-            /> -->
+ src="path/to/phone-icon.png"
+ alt="Phone"
+ class="contact-icon"
+ /> -->
             <span>(123) 456-7890</span>
           </div>
           <div class="contact-item">
             <!-- <img
-              src="path/to/email-icon.png"
-              alt="Email"
-              class="contact-icon"
-            /> -->
+ src="path/to/email-icon.png"
+ alt="Email"
+ class="contact-icon"
+ /> -->
             <span>info@realestate.com</span>
           </div>
         </div>
