@@ -62,3 +62,28 @@ function sendEmail(event) {
   closeModal();
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const subscribeButton = document.getElementById('subscribe-button');
+    subscribeButton.addEventListener('click', sendEmailSubscribe);
+});
+
+function sendEmailSubscribe() {
+    const emailInput = document.getElementById('email-subscribe');
+    const email = emailInput.value;
+
+    if (validateEmail(email)) {
+        const recipient = 'vidhisanghvi26@gmail.com';
+        const subject = 'Subscription Confirmation';
+        const body = `You have a new subscription from: ${email}`;
+        window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        alert(`Subscription successful for: ${email}`);
+    } else {
+        alert('Please enter a valid email address.');
+    }
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
