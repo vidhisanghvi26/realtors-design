@@ -109,7 +109,7 @@ p {
   margin-top: 1rem;
   padding: 1rem;
   height: 50vh;
-  background-image: url("/assets/rsr_home_background.png");
+  background-image: url("assets/rsr_home_background.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -136,7 +136,7 @@ p {
 
 .hero-image {
   flex: 1;
-  background-image: url("/assets/rsr_homepage_hero_image.png");
+  background-image: url("assets/rsr_homepage_hero_image.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
